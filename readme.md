@@ -16,7 +16,7 @@
 #### Deno
 
 ```ts
-import { sendSMS } from 'https://deno.land/x/sms@v0.1.0/mod.ts'
+import { sendSMS } from 'https://deno.land/x/sms@v0.1.3/mod.ts'
 ```
 
 #### Node.js
