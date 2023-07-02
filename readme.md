@@ -1,6 +1,9 @@
 <div align='center'>
-  <img src='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_darkmode.svg#gh-dark-mode-only' width='256px' />
-  <img src='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_lightmode.svg#gh-light-mode-only' width='256px' />
+  <picture>
+    <source media='(prefers-color-scheme: dark)' srcset='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_darkmode.svg' width='256px'>
+    <source media='(prefers-color-scheme: light)' srcset='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_lightmode.svg' width='256px'>
+    <img src='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_lightmode.svg' width='256px'>
+  </picture>
   <br>
   <br>
   <h1>sms</h1>
