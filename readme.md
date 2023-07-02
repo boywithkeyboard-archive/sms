@@ -8,8 +8,6 @@
 
 <br>
 
-A JavaScript module for sending SMS messages using [GatewayAPI](https://gatewayapi.com) or [Twilio](https://www.twilio.com).
-
 ### Setup
 
 #### Deno
@@ -25,13 +23,16 @@ npm i @azury/sms
 ```
 
 ```ts
-import { sendSMS } from 'sms'
+import { sendSMS } from '@azury/sms'
 ```
 
 ### Usage
 
 ```ts
-sendSMS({
-  gateway: 'twilio' // default: 'gatewayapi'
+const response = await sendSMS({
+  token: '...',
+  sender: 'Your Company',
+  message: '123456 is your verification code.',
+  to: 491759999999, // +49 175 9999999
 })
 ```
