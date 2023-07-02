@@ -30,3 +30,17 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: './out'
+
+      - name: 'Publish Release'
+        uses: 'actions/github-script@v6'
+        with:
+          script: |
+            github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: process.env.VERSION,
+              name: process.env.VERSION,
+              body: '',
+              draft: false,
+              prerelease: false
+            })
