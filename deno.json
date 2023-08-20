@@ -5,8 +5,8 @@
   },
   "tasks": {
     "build:types": "npx -p typescript tsc --target esnext --module es2020 --declaration --emitDeclarationOnly --outDir out/types --newLine lf mod.ts",
-    "build:esm": "deno run -A https://deno.land/x/esbuild@v0.18.11/mod.js mod.ts --bundle --minify --allow-overwrite --format=esm --outfile=out/mod.mjs",
-    "build:cjs": "deno run -A https://deno.land/x/esbuild@v0.18.11/mod.js mod.ts --bundle --minify --allow-overwrite --format=cjs --outfile=out/mod.cjs",
+    "build:esm": "deno run -A https://deno.land/x/esbuild@v0.19.0/mod.js mod.ts --bundle --minify --allow-overwrite --format=esm --outfile=out/mod.mjs",
+    "build:cjs": "deno run -A https://deno.land/x/esbuild@v0.19.0/mod.js mod.ts --bundle --minify --allow-overwrite --format=cjs --outfile=out/mod.cjs",
     "build": "deno run -A .github/preBuild.ts && deno task build:types && deno task build:cjs && deno task build:esm",
     "check": "deno fmt"
   },
