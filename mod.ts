@@ -36,7 +36,7 @@ export function encode(data: ArrayBuffer | string): string {
   return result
 }
 
-export async function sendSMS(options: {
+export async function sendMessage(options: {
   /**
    * If specified, send status notifications to this URL. Otherwise use the default webhook if set.
    */

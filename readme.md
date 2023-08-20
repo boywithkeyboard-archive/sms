@@ -1,40 +1,29 @@
-<div align='center'>
-  <picture>
-    <source media='(prefers-color-scheme: dark)' srcset='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_darkmode.svg' width='256px'>
-    <source media='(prefers-color-scheme: light)' srcset='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_lightmode.svg' width='256px'>
-    <img src='https://raw.githubusercontent.com/azurystudio/sms/dev/.github/sms_lightmode.svg' width='256px'>
-  </picture>
-  <br>
-  <br>
-  <h1>sms</h1>
-</div>
-
-<br>
+## sms
 
 ### Setup
 
-#### Deno
+#### 🦕 Deno
 
 ```ts
-import { sendSMS } from 'https://deno.land/x/sms@v0.1.3/mod.ts'
+import { sendMessage } from 'https://deno.land/x/sms@v0.2.0/mod.ts'
 ```
 
-#### Node.js
+#### 🐢 Node.js
 
 ```bash
-npm i @azury/sms
+npm i @deaddeno/sms
 ```
 
 ```ts
-import { sendSMS } from '@azury/sms'
+import { sendMessage } from '@deaddeno/sms'
 ```
 
 ### Usage
 
 ```ts
-const response = await sendSMS({
+const response = await sendMessage({
   token: '...',
-  sender: 'Your Company',
+  sender: 'Your company',
   message: '123456 is your verification code.',
   to: 491759999999, // +49 175 9999999
 })
