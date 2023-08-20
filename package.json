@@ -1,10 +1,10 @@
 {
-  "name": "@azury/sms",
+  "name": "@deaddeno/sms",
   "version": "0.0.0",
   "author": "Samuel Kopp (https://samuelkopp.de)",
   "license": "Apache-2.0",
-  "description": "A JavaScript module for sending SMS messages using GatewayAPI.",
-  "repository": "azurystudio/sms",
+  "description": "A JavaScript module for sending SMS messages.",
+  "repository": "deaddeno/sms",
   "funding": "https://github.com/sponsors/boywithkeyboard",
   "main": "mod.cjs",
   "module": "mod.mjs",
