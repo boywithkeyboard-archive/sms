@@ -1,33 +1,39 @@
 {
-  "name": "@deaddeno/sms",
-  "version": "0.0.0",
+  "name": "@boywithkeyboard/sms",
+  "version": "0.3.0",
   "author": "Samuel Kopp (https://samuelkopp.de)",
   "license": "Apache-2.0",
-  "description": "A JavaScript module for sending SMS messages.",
-  "repository": "deaddeno/sms",
+  "description": "A JavaScript library for sending SMS messages.",
   "funding": "https://github.com/sponsors/boywithkeyboard",
-  "main": "mod.cjs",
-  "module": "mod.mjs",
-  "types": "types/mod.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "mod.mjs",
-    "mod.cjs",
-    ".npmrc",
-    "types"
+    "./dist/index.d.ts",
+    "./dist/index.mjs",
+    "./dist/index.cjs"
   ],
   "exports": {
     ".": {
       "import": {
-        "types": "./types/mod.d.ts",
-        "default": "./mod.mjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./types/mod.d.ts",
-        "default": "./mod.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
       }
     }
   },
+  "scripts": {
+    "build": "builder --esm --cjs && tsc"
+  },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@boywithkeyboard/builder": "^0.4.0",
+    "@types/node": "^20.8.10",
+    "typescript": "^5.2.2"
   }
 }

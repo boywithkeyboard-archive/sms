@@ -2,29 +2,32 @@
 
 ### Setup
 
-#### 🦕 Deno
+#### Deno
 
 ```ts
-import { sendMessage } from 'https://deno.land/x/sms@v0.2.0/mod.ts'
+import { sendMessage } from 'https://den.ooo/sms'
 ```
 
-#### 🐢 Node.js
+#### Node.js
 
 ```bash
-npm i @deaddeno/sms
+npm i @boywithkeyboard/sms
 ```
 
 ```ts
-import { sendMessage } from '@deaddeno/sms'
+import { sendMessage } from '@boywithkeyboard/sms'
 ```
 
 ### Usage
+
+> [!IMPORTANT]
+> You need to open a [GatewayAPI](https://gatewayapi.com) account first to use this module.
 
 ```ts
 const response = await sendMessage({
   token: '...',
   sender: 'Your company',
   message: '123456 is your verification code.',
-  to: 491759999999, // +49 175 9999999
+  to: 491759999999 // +49 175 9999999
 })
 ```

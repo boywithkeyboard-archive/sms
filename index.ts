@@ -1,15 +1,15 @@
 // deno-fmt-ignore
 const base64abc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/']
 
-export function encode(data: ArrayBuffer | string): string {
+function encode(data: ArrayBuffer | string): string {
   const uint8 = typeof data === 'string'
     ? new TextEncoder().encode(data)
     : data instanceof Uint8Array
     ? data
     : new Uint8Array(data)
 
-  let result = '',
-    i
+  let result = ''
+  , i
 
   const l = uint8.length
 
@@ -136,11 +136,11 @@ export async function sendMessage(options: {
    */
   validityPeriod?: number
 }) {
-  const response = await fetch('https://gatewayapi.com/rest/mtsms', {
+  const res = await fetch('https://gatewayapi.com/rest/mtsms', {
     method: 'POST',
     headers: {
       Authorization: `Basic ${encode(options.token + ':')}`,
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       callback_url: options.callbackUrl,
@@ -153,20 +153,19 @@ export async function sendMessage(options: {
       priority: options.priority,
       recipients: typeof options.to === 'number'
         ? [{
-          msisdn: options.to,
+          msisdn: options.to
         }]
         : options.to instanceof Array
-        ? options.to.map((i) => {
-          if (typeof i !== 'number') {
+        ? options.to.map(i => {
+          if (typeof i !== 'number')
             return {
               msisdn: i.msisdn,
               charge: i.charge,
-              tags: i.tags,
+              tags: i.tags
             }
-          }
 
           return {
-            msisdn: i,
+            msisdn: i
           }
         })
         : [options.to],
@@ -174,9 +173,9 @@ export async function sendMessage(options: {
       sendtime: options.sendTime,
       udh: options.udh,
       userref: options.userRef,
-      validity_period: options.validityPeriod,
-    }),
+      validity_period: options.validityPeriod
+    })
   })
 
-  return response
+  return res
 }
