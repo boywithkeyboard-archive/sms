@@ -1,46 +1,29 @@
-name: 'publish'
+name: publish
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: Kind of release
+        default: minor
+        type: choice
+        options:
+        - prepatch
+        - patch
+        - preminor
+        - minor
+        - premajor
+        - major
+        required: true
 
 jobs:
   publish:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: 'actions/checkout@v3'
+      - uses: actions/checkout@v4
 
-      - uses: 'actions/setup-node@v3'
+      - name: Publish update
+        uses: boywithkeyboard/publisher@v2
         with:
-          node-version: 18
-
-      - uses: 'denoland/setup-deno@v1'
-        with:
-          deno-version: 'v1.x'
-
-      - name: 'Grab Version'
-        run: echo "VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-
-      - name: 'Build Package'
-        run: 'deno task build'
-
-      - uses: 'JS-DevTools/npm-publish@v2'
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: './out'
-
-      - name: 'Publish Release'
-        uses: 'actions/github-script@v6'
-        with:
-          script: |
-            github.rest.repos.createRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: process.env.VERSION,
-              name: process.env.VERSION,
-              body: '',
-              draft: false,
-              prerelease: false
-            })
+          kind: ${{github.event.inputs.kind}}
