@@ -1,6 +1,6 @@
 {
   "name": "@boywithkeyboard/sms",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Samuel Kopp (https://samuelkopp.de)",
   "license": "Apache-2.0",
   "description": "A JavaScript library for sending SMS messages.",
