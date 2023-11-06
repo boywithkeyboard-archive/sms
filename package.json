@@ -5,6 +5,7 @@
   "license": "Apache-2.0",
   "description": "A JavaScript library for sending SMS messages.",
   "funding": "https://github.com/sponsors/boywithkeyboard",
+  "repository": "github:boywithkeyboard/sms",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -26,7 +27,8 @@
     }
   },
   "scripts": {
-    "build": "builder --esm --cjs && tsc"
+    "build": "builder --esm --cjs && tsc",
+    "check": "tsc"
   },
   "engines": {
     "node": ">=18"
