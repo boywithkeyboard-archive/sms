@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@boywithkeyboard/builder": "^0.4.1",
-    "@types/node": "^20.9.1",
+    "@types/node": "^20.9.2",
     "typescript": "^5.2.2"
   }
 }
