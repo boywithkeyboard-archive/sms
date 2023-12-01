@@ -34,7 +34,7 @@
     "node": ">=18"
   },
   "devDependencies": {
-    "@boywithkeyboard/builder": "^0.4.1",
+    "@boywithkeyboard/builder": "^0.4.2",
     "@types/node": "^20.9.1",
     "typescript": "^5.3.2"
   }
