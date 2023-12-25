@@ -5,7 +5,7 @@
 #### Deno
 
 ```ts
-import { sendMessage } from 'https://den.ooo/sms'
+import { sendMessage } from 'https://den.ooo/sms/index.ts'
 ```
 
 #### Node.js
