@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This NPM package was superseded by [gatewayapi(.js)](https://github.com/boywithkeyboard/gatewayapi).
+
 ## sms
 
 ### Setup
